@@ -4,7 +4,17 @@ create table customers
         primary key,
     firstname varchar(20) null,
     lastname  varchar(20) null,
-    company   varchar(20) null,
+    store     varchar(20) null,
+    constraint id
+        unique (id)
+);
+
+create table order_association
+(
+    id          int auto_increment
+        primary key,
+    customer_id int not null,
+    order_id    int not null,
     constraint id
         unique (id)
 );
